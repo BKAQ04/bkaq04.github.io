@@ -63,6 +63,7 @@ function updateMainContent(type) {
         label.innerHTML = 'Choose a planet:';
         select.innerHTML = `
             <option value="">--Please choose a planet--</option>
+			<option value="All">All Planets</option>
             <option value="mercury">Mercury</option>
 			<option value="venus">Venus</option>
             <option value="earth">Earth</option>
@@ -83,6 +84,7 @@ function updateMainContent(type) {
             <!-- Add other phenomena -->
         `;
         checkboxContainer.style.display = 'none'; // Hide the checkbox
+		checkboxContainer = null
     }
 }
 
