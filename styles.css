@@ -1,14 +1,17 @@
+/* Importing Google Font - Orbitron for stylistic text */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+/* Global body styles */
 body {
     margin: 0;
-    padding: 0; /* Ensuring no default padding */
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
-    color: #CCD6F6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding: 0; /* No default padding */
+    font-family: 'Orbitron', sans-serif; /* Consistent font throughout */
+    background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%); /* Smooth background gradient */
+    color: #CCD6F6; /* Soft light blue text for readability */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+/* Main titles */
 h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -18,6 +21,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Form elements styling */
 select, input[type=range] {
     display: block;
     margin: 20px auto;
@@ -35,6 +39,7 @@ select:hover, input[type=range]:hover {
     border: 1px solid #0abde3;
 }
 
+/* Video styling */
 #planet-info video {
     display: block;
     margin: 20px auto;
@@ -43,7 +48,7 @@ select:hover, input[type=range]:hover {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-
+/* Speed control customization */
 #speed-control {
     -webkit-appearance: none;
     height: 10px;
@@ -80,55 +85,32 @@ select:hover, input[type=range]:hover {
     font-size: 1.2rem;
 }
 
-/* Sidebar styling */
+/* Enhanced Sidebar Styling */
 #sidebar {
-    width: 200px; /* Controlled width */
-    background: linear-gradient(180deg, #16213e, #1b2735 100%); /* Vertical gradient */
+    width: 200px; /* Fixed width */
+    background: linear-gradient(180deg, #16213e, #1b2735 100%); /* Subtle dark gradient */
     color: #ffffff;
     padding: 20px;
-    height: 100vh; /* Full viewport height */
-    box-sizing: border-box; /* Include padding in width */
-    position: fixed; /* Fixed position */
+    height: 100vh; /* Full height of the viewport */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    position: fixed; /* Fixed position to stay in view */
     top: 0;
     left: 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5); /* Adding subtle shadow for depth */
+    z-index: 1000; /* Ensures sidebar is always on top */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hiding and showing */
 }
 
-/* Main content styling, corrected margin */
+/* Optional: Hide/Show sidebar on hover */
+#sidebar:hover {
+    transform: translateX(0); /* Sidebar extends fully on hover */
+}
+
+/* Main content adjustment to avoid overlap */
 #main-content {
-    margin-left: 220px; /* Margin to accommodate sidebar width */
+    margin-left: 220px; /* Make room for the sidebar */
     padding: 20px;
-    width: calc(100% - 220px); /* Subtract sidebar width from total width */
-    min-height: 100vh; /* Ensuring minimum height */
-    position: relative; /* Ensuring it is positioned correctly */
+    width: calc(100% - 220px); /* Adjust width to take sidebar into account */
+    min-height: 100vh;
+    position: relative;
 }
-
-/* Checkbox and Label Styling */
-input[type='checkbox'] {
-    width: 20px; /* Larger checkbox size for better visibility */
-    height: 20px; /* Maintain aspect ratio */
-    margin: 0 15px 0 0; /* Increased right margin for spacing between checkbox and label */
-    vertical-align: middle; /* Aligns checkbox vertically with the label */
-    cursor: pointer; /* Indicates it's clickable */
-    accent-color: #0abde3; /* Uses theme color for the checkbox tick */
-}
-
-label {
-    cursor: pointer; /* Indicates label is clickable */
-    display: inline-block; /* Ensures label is on the same line as checkbox */
-    font-size: 1.2rem; /* Increased font size for readability */
-    color: #FFFFFF; /* White color for better visibility */
-    text-shadow: 0 1px 1px rgba(0,0,0,0.7); /* Text shadow for depth */
-    transition: color 0.3s ease; /* Smooth transition for interactive effects */
-    margin-left: 5px; /* Adds space between the checkbox and the label text */
-}
-
-label:hover {
-    color: #0abde3; /* Highlight color on hover to match checkbox accent */
-}
-
-/* Enhancing the focus state for accessibility */
-input[type='checkbox']:focus + label {
-    outline: 2px solid #0abde3; /* Outline when focused for accessibility */
-    outline-offset: 2px; /* Spacing around outline */
-}
-
