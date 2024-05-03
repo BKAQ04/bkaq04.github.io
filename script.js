@@ -10,7 +10,7 @@ function displayVideo(planet) {
 
     if (planet) {
         const isAlternate = document.getElementById('alternate-video').checked;
-        const videoPath = isAlternate ? `AP_${planet}.mp4` : `${planet}.mp4`;
+        const videoPath = isAlternate ? `AP_${planet}1.mp4` : `${planet}.mp4`;
 
         const videoElement = document.createElement('video');
         videoElement.setAttribute('src', videoPath);
