@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0; /* Ensuring no default padding */
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+    color: #CCD6F6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #E3E3E3;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+select, input[type=range] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 60%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #576574;
+    border-radius: 20px;
+    color: #FFFFFF;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+select:hover, input[type=range]:hover {
+    border: 1px solid #0abde3;
+}
+
+#planet-info video {
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #0abde3;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+#speed-control {
+    -webkit-appearance: none;
+    height: 10px;
+    background: #333;
+    outline: none;
+    opacity: 0.7;
+}
+
+#speed-control:hover {
+    opacity: 1;
+}
+
+#speed-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0abde3;
+    cursor: pointer;
+}
+
+#speed-control::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0abde3;
+    cursor: pointer;
+}
+
+#speed-value {
+    text-align: center;
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* Sidebar styling */
+#sidebar {
+    width: 200px; /* Controlled width */
+    background: linear-gradient(180deg, #16213e, #1b2735 100%); /* Vertical gradient */
+    color: #ffffff;
+    padding: 20px;
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box; /* Include padding in width */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+}
+
+/* Main content styling, corrected margin */
+#main-content {
+    margin-left: 220px; /* Margin to accommodate sidebar width */
+    padding: 20px;
+    width: calc(100% - 220px); /* Subtract sidebar width from total width */
+    min-height: 100vh; /* Ensuring minimum height */
+    position: relative; /* Ensuring it is positioned correctly */
+}
+
+/* Checkbox and Label Styling */
+input[type='checkbox'] {
+    width: 20px; /* Larger checkbox size for better visibility */
+    height: 20px; /* Maintain aspect ratio */
+    margin: 0 15px 0 0; /* Increased right margin for spacing between checkbox and label */
+    vertical-align: middle; /* Aligns checkbox vertically with the label */
+    cursor: pointer; /* Indicates it's clickable */
+    accent-color: #0abde3; /* Uses theme color for the checkbox tick */
+}
+
+label {
+    cursor: pointer; /* Indicates label is clickable */
+    display: inline-block; /* Ensures label is on the same line as checkbox */
+    font-size: 1.2rem; /* Increased font size for readability */
+    color: #FFFFFF; /* White color for better visibility */
+    text-shadow: 0 1px 1px rgba(0,0,0,0.7); /* Text shadow for depth */
+    transition: color 0.3s ease; /* Smooth transition for interactive effects */
+    margin-left: 5px; /* Adds space between the checkbox and the label text */
+}
+
+label:hover {
+    color: #0abde3; /* Highlight color on hover to match checkbox accent */
+}
+
+/* Enhancing the focus state for accessibility */
+input[type='checkbox']:focus + label {
+    outline: 2px solid #0abde3; /* Outline when focused for accessibility */
+    outline-offset: 2px; /* Spacing around outline */
+}
+

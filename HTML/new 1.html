@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sidebar">
+        <h1>What Do You Want To See?</h1>
+        <input type="radio" id="orbits" name="content-type" value="orbits" checked>
+        <label for="orbits">Orbits</label><br>
+        <input type="radio" id="phenomena" name="content-type" value="phenomena">
+        <label for="phenomena">Phenomena</label>
+    </div>
+
+    <div id="main-content">
+        <h1>Solar System Project</h1>
+        <label for="planet-select">Choose a planet:</label>
+        <select id="planet-select">
+            <option value="">--Please choose a planet--</option>
+            <option value="mercury">Mercury</option>
+			<option value="venus">Venus</option>
+            <option value="earth">Earth</option>
+			<option value="mars">Mars</option>
+            <option value="jupiter">Jupiter</option>
+			<option value="saturn">Saturn</option>
+            <option value="uranus">Uranus</option>
+			<option value="neptune">Neptune</option>
+            <!-- Add other planets -->
+        </select>
+        <div id="planet-info"></div>
+        <label for="speed-control">Adjust Video Speed:</label>
+        <input type="range" id="speed-control" min="0.5" max="2.0" step="0.1" value="1.0">
+        <span id="speed-value">1.0x</span>
+		<div id="checkbox-container">
+        <label for="alternate-video">Show Apogee & Perigee:</label>
+        <input type="checkbox" id="alternate-video">
+		</div>
+    </div>
+	
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
