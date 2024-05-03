@@ -72,21 +72,18 @@ function updateMainContent(type) {
 			<option value="saturn">Saturn</option>
             <option value="uranus">Uranus</option>
 			<option value="neptune">Neptune</option>
-            <!-- Add other planets -->
         `;
-        checkboxContainer.style.display = 'block'; // Show the checkbox
+        checkboxContainer.style.display = 'block';
     } else if (type === 'phenomena') {
         label.innerHTML = 'Select phenomena:';
         select.innerHTML = `
             <option value="">--Please choose a phenomena--</option>
             <option value="KL3">Kepler's Third Law</option>
             <option value="retrograde">Retrograde</option>
-            <!-- Add other phenomena -->
         `;
-        checkboxContainer.style.display = 'none'; // Hide the checkbox
+        checkboxContainer.style.display = 'none';
 		checkboxContainer = null
     }
 }
 
-// Initialize the page with orbits content
 updateMainContent('orbits');
