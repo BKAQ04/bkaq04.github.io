@@ -64,14 +64,14 @@ function updateMainContent(type) {
         select.innerHTML = `
             <option value="">--Please choose a planet--</option>
 			<option value="All">All Planets</option>
-            <option value="mercury">Mercury</option>
-			<option value="venus">Venus</option>
-            <option value="earth">Earth</option>
-			<option value="mars">Mars</option>
-            <option value="jupiter">Jupiter</option>
-			<option value="saturn">Saturn</option>
-            <option value="uranus">Uranus</option>
-			<option value="neptune">Neptune</option>
+            <option value="Mercury">Mercury</option>
+			<option value="Venus">Venus</option>
+            <option value="Earth">Earth</option>
+			<option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+			<option value="Saturn">Saturn</option>
+            <option value="Uranus">Uranus</option>
+			<option value="Neptune">Neptune</option>
         `;
         checkboxContainer.style.display = 'block';
     } else if (type === 'phenomena') {
@@ -79,7 +79,7 @@ function updateMainContent(type) {
         select.innerHTML = `
             <option value="">--Please choose a phenomena--</option>
             <option value="KL3">Kepler's Third Law</option>
-            <option value="retrograde">Retrograde</option>
+            <option value="Retrograde">Retrograde</option>
         `;
         checkboxContainer.style.display = 'none';
 		checkboxContainer = null
