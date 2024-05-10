@@ -56,6 +56,7 @@ document.querySelectorAll('input[name="content-type"]').forEach(input => {
 function updateMainContent(type) {
     const mainContent = document.getElementById('main-content');
     const checkboxContainer = document.getElementById('checkbox-container');
+    const alternateVideoCheckbox = document.getElementById('alternate-video'); // Get the checkbox element
     const label = mainContent.querySelector('label');
     const select = mainContent.querySelector('select');
 
@@ -63,15 +64,15 @@ function updateMainContent(type) {
         label.innerHTML = 'Choose a planet:';
         select.innerHTML = `
             <option value="">--Please choose a planet--</option>
-			<option value="All">All Planets</option>
+            <option value="All">All Planets</option>
             <option value="Mercury">Mercury</option>
-			<option value="Venus">Venus</option>
+            <option value="Venus">Venus</option>
             <option value="Earth">Earth</option>
-			<option value="Mars">Mars</option>
+            <option value="Mars">Mars</option>
             <option value="Jupiter">Jupiter</option>
-			<option value="Saturn">Saturn</option>
+            <option value="Saturn">Saturn</option>
             <option value="Uranus">Uranus</option>
-			<option value="Neptune">Neptune</option>
+            <option value="Neptune">Neptune</option>
         `;
         checkboxContainer.style.display = 'block';
     } else if (type === 'phenomena') {
@@ -82,8 +83,10 @@ function updateMainContent(type) {
             <option value="Retrograde">Retrograde</option>
         `;
         checkboxContainer.style.display = 'none';
-		checkboxContainer = null
+        alternateVideoCheckbox.checked = false; // Uncheck the checkbox
     }
 }
 
+// Ensure this function is called when the document is ready to set initial content type
 updateMainContent('orbits');
+
