@@ -6,7 +6,16 @@ let currentVideo = null; // Keep track of the current video element
 
 function displayVideo(planet) {
     const planetInfoDiv = document.getElementById('planet-info');
+    const checkboxContainer = document.getElementById('checkbox-container'); // Get the checkbox container
     planetInfoDiv.innerHTML = ''; // Clear the current content
+
+    // Control the visibility of the "Show Apogee & Perigee" checkbox
+    if (planet === 'Mercury' || planet === 'Earth' || planet === 'Neptune') {
+        checkboxContainer.style.display = 'block';
+    } else {
+        checkboxContainer.style.display = 'none';
+        document.getElementById('alternate-video').checked = false; // Also uncheck the box when hidden
+    }
 
     if (planet) {
         const isAlternate = document.getElementById('alternate-video').checked;
@@ -24,6 +33,25 @@ function displayVideo(planet) {
         planetInfoDiv.appendChild(videoElement); // Append the video to the div
     }
 }
+
+document.getElementById('planet-select').addEventListener('change', function() {
+    displayVideo(this.value); // Call displayVideo whenever the selected planet changes
+});
+
+document.getElementById('alternate-video').addEventListener('change', function() {
+    if (currentVideo) { // Only update if a planet is currently selected
+        displayVideo(document.getElementById('planet-select').value);
+    }
+});
+
+document.getElementById('speed-control').addEventListener('input', function() {
+    const speed = this.value;
+    if (currentVideo) {
+        currentVideo.playbackRate = speed; // Adjust the playback rate
+    }
+    document.getElementById('speed-value').innerText = `${speed}x`;
+});
+
 
 // Listener for changes in the alternate video checkbox
 document.getElementById('alternate-video').addEventListener('change', function() {
